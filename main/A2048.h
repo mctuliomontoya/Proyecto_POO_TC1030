@@ -326,6 +326,7 @@ int A2048::mainA()
 	Print();
 	int direction = 0;
 	int gameState = -1;
+	int siono = 0;
 	while (true)
 	{
 		direction = Input();
@@ -340,6 +341,8 @@ int A2048::mainA()
 		}
 		else if(gameState == GAME_WIN)
 		{
+
+			
 			return 1;
 			break;
 		}
@@ -349,6 +352,4 @@ int A2048::mainA()
 			break;
 		}
 	}
-
-
 }
