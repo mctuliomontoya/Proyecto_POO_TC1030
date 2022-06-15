@@ -126,6 +126,7 @@ int main(){
 //movement
 Ahorcado hangedMan;
 A2048 _A2048;
+ElGato gatoGame;
 system("cls");
 int playerPosX=8;
 int playerPosY=8;
@@ -192,7 +193,24 @@ else if (playerPosX == 14 && playerPosY == 0)
 }
 else if (playerPosX == 0 && playerPosY == 15)
 {
-    std::cout << "BEMBEÑIDO AU CASTILLO!"<< std::endl;
+if (keys[3] == 0){
+    if (gatoGame.mainZ() == 1){
+        keys[3] = true;
+        main();
+    }
+    else{
+        keys[3] = false;
+        main();
+    }
+    }
+    else if(keys[3] == 1)
+    {
+        cout << "Ya has completado este desafio, aun te esperan un par!"<<endl<<endl;
+        cout << "Presiona cualquier tecla para continuar...";
+        getch();
+        system("cls");
+        main();
+    }
 }
  
 

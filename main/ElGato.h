@@ -6,63 +6,20 @@ class ElGato : public Rooms{
     public:
         void showDesc();
         int mainZ();
+        void Intro_Primera(char c[3][3]);
+        void tablero(char c[3][3]);
+        void Intro_Personaje(char c[3][3]);
+        void Intro_IA(char c[3][3]);
+        int Winner(char c[3][3]);
 };
 
-void Intro_Primera(char c[3][3]);
-void tablero(char c[3][3]);
-void Intro_Personaje(char c[3][3]);
-void Intro_IA(char c[3][3]);
-int Winner(char c[3][3]);
-
-int mainZ(){
-    char c[3][3];
-
-    int i, j;
-
-    i = 0;
-    Intro_Primera(c);
-
-
-    do{
-        system("cls");
-        tablero(c);
-
-        if(i % 2 == 0){
-            Intro_Personaje(c);
-        }
-        else{
-            Intro_IA(c);
-        }
-        j = Winner(c);
-        i++;
-    }
-    while(i <= 9 && j == 2);
-
-    system("cls");
-    tablero(c);
-    
-    if(j == 0){
-        printf("Ganaste!!!\n");
-        return 1;
-        
-    }
-    else if(j == 1){
-        printf("Perdiste :C\n");
-        return 0;
-    }
-    else{
-        printf("Has empatado, Vuelvelo a intentar\n");
-        return 0;
-    }
-
-
-    system("Pause");
-
-}
 
 
 
-void Intro_Primera(char c[3][3]){
+
+
+
+void ElGato::Intro_Primera(char c[3][3]){
     int i, j;
     char aux;
     aux = '1';
@@ -74,7 +31,7 @@ void Intro_Primera(char c[3][3]){
     }
 }
 
-void Intro_Personaje(char c[3][3]){
+void ElGato::Intro_Personaje(char c[3][3]){
     int i, j, k;
     char aux;
 
@@ -176,7 +133,7 @@ void Intro_Personaje(char c[3][3]){
     
 }
 
-void Intro_IA(char c[3][3]){
+void ElGato::Intro_IA(char c[3][3]){
     int i, j, k;
     char aux;
 
@@ -196,7 +153,7 @@ void Intro_IA(char c[3][3]){
 
 }
 
-void tablero(char c[3][3]){
+void ElGato::tablero(char c[3][3]){
     int i, j;
 
 
@@ -216,7 +173,7 @@ void tablero(char c[3][3]){
     printf("\n\n");
 }
 
-int Winner(char c[3][3]){
+int ElGato::Winner(char c[3][3]){
     if (c[0][0] == 'X' || c[0][0] == 'O'){
         if (c[0][0] == c[0][1] && c[0][0] == c[0][2]){
             if (c[0][0] == 'X'){
@@ -288,4 +245,50 @@ int Winner(char c[3][3]){
         }
     }
     return 2;
+}
+
+int ElGato::mainZ(){
+    char c[3][3];
+
+    int i, j;
+
+    i = 0;
+    Intro_Primera(c);
+
+
+    do{
+        system("cls");
+        tablero(c);
+
+        if(i % 2 == 0){
+            Intro_Personaje(c);
+        }
+        else{
+            Intro_IA(c);
+        }
+        j = Winner(c);
+        i++;
+    }
+    while(i <= 9 && j == 2);
+
+    system("cls");
+    tablero(c);
+    
+    if(j == 0){
+        printf("Ganaste!!!\n");
+        return 1;
+        
+    }
+    else if(j == 1){
+        printf("Perdiste :C\n");
+        return 0;
+    }
+    else{
+        printf("Has empatado, Vuelvelo a intentar\n");
+        return 0;
+    }
+
+
+    system("Pause");
+
 }
