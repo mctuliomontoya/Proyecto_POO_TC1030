@@ -20,10 +20,12 @@ int Ahorcado::mainHd(){
     fallos = "";
     int eleccion;
     while(true){
+        cout << "Encontramos una cueva muy misteriosa, se ve que algo al fondo brilla..."<< endl;
+        system ("pause");
         system("cls");
-        cout << "\t::::MENU::::" << endl;
-        cout << "[1] Combatir." << endl;
-        cout << "[2] Salir." << endl;
+        cout << "\tQuieres entrar?" << endl;
+        cout << "[1] Entrar a la cueva" << endl;
+        cout << "[2] Salir" << endl;
         cout <<  "Que quieres hacer: ";
         cin >> eleccion;
         if(eleccion == 1){
@@ -53,7 +55,7 @@ void Ahorcado::play(){
     }
 
     while(vidas > 0){
-        system("clear");
+        system("cls");
         cout << "--- AHORCADO ---" << endl;
         DibujarCuerpo();
         cout << "Fallos: " << fallos << endl;
@@ -79,7 +81,7 @@ void Ahorcado::play(){
             }
         }
         if(completa){
-            system("clear");
+            system("cls");
             cout << "--- AHORCADO ---" << endl;
             DibujarCuerpo();
             cout << "Palabra: " << palabras[nA] << endl;
@@ -89,7 +91,7 @@ void Ahorcado::play(){
 
         }
     }
-    system("clear");
+    system("cls");
     cout << "--- AHORCADO ---" << endl;
     DibujarCuerpo();
     cout << "Palabra: " << palabras[nA] << endl;
