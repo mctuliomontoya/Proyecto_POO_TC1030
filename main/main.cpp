@@ -200,6 +200,8 @@ if (keys[3] == 0){
     }
     else{
         keys[3] = false;
+        cout<<"Has perdido!, necesitas volver a intentarlo!"<<endl;
+        getch();
         main();
     }
     }
