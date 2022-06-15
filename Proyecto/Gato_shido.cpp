@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <time.h>
 
-void loop(char c[3][3]);
 void Intro_Primera(char c[3][3]);
 void tablero(char c[3][3]);
 void Intro_Personaje(char c[3][3]);
@@ -12,14 +11,7 @@ int Winner(char c[3][3]);
 int main(){
     char c[3][3];
 
-    loop(c);
-
-    system("Pause");
-    return 0;
-}
-
-void loop(char c[3][3]){
-    int i, j;
+        int i, j;
 
     i = 0;
     Intro_Primera(c);
@@ -45,15 +37,24 @@ void loop(char c[3][3]){
     
     if(j == 0){
         printf("Ganaste!!!\n");
+        return 1;
+        
     }
     else if(j == 1){
         printf("Perdiste :C\n");
+        return 0;
     }
     else{
         printf("Has empatado, Vuelvelo a intentar\n");
+        return 0;
     }
 
+
+    system("Pause");
+
 }
+
+
 
 void Intro_Primera(char c[3][3]){
     int i, j;
