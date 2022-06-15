@@ -162,6 +162,7 @@ else if (playerPosX == 14 && playerPosY == 0)
     if (keys[2] == 0){
         if (_A2048.mainA() == 1){
             keys[2] = true;
+            system("pause");
             main();
         }
         else{
