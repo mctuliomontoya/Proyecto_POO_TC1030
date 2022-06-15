@@ -8,6 +8,7 @@
 
 using namespace std;
 
+#include "ElGato.h"
 #include "Ahorcado.h"
 #include "A2048.h"
 #include "Character.h"
@@ -26,6 +27,8 @@ bool keys[4] = {0,0,0,0};
 // .: Space
 // F: Finish
 // P: Player
+
+
 
 const char maze[17][17]={{'#','#','#','#','#','#','n','#','#','#','#','#','#','#','R','#','#'},
                        {'#','#','.','#','#','#','.','#','#','#','.','#','.','#','.','#','#'},
@@ -123,6 +126,7 @@ int main(){
 //movement
 Ahorcado hangedMan;
 A2048 _A2048;
+system("cls");
 int playerPosX=8;
 int playerPosY=8;
 int movement;
@@ -134,7 +138,14 @@ while(!CheckWinCondition(playerPosX,playerPosY)){//if player is not in the finis
 }
 
 if (playerPosX == 8 && playerPosY == 16){
-    std::cout << "Finish Case 0!"<< std::endl;
+    if (keys[1]  == 0|| keys[2] == 0)
+    {
+        cout << "Necesitas terminar todos los niveles antes de entrar! >:c" << endl<<endl;
+        cout << "Presiona cualquier tecla para continuar...";
+        getch();
+        system("cls");
+        main();
+    }
 }
 else if (playerPosX == 6 && playerPosY == 0)
 {

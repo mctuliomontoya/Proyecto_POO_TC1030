@@ -1,6 +1,12 @@
-#include <iostream>
-#include <stdio.h>
-#include <time.h>
+#include "Rooms.h"
+
+class ElGato : public Rooms{
+    private:
+        string name;
+    public:
+        void showDesc();
+        int mainZ();
+};
 
 void Intro_Primera(char c[3][3]);
 void tablero(char c[3][3]);
@@ -8,7 +14,7 @@ void Intro_Personaje(char c[3][3]);
 void Intro_IA(char c[3][3]);
 int Winner(char c[3][3]);
 
-int main(){
+int mainZ(){
     char c[3][3];
 
     int i, j;

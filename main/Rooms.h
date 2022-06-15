@@ -8,7 +8,7 @@ class Rooms {
     public:
         Rooms();
         Rooms(string);
-        // virtual void showDesc();
+        virtual void showDesc();
 };
 
 Rooms::Rooms()   {
@@ -17,6 +17,11 @@ Rooms::Rooms()   {
 
 Rooms::Rooms(string _d)  {
     desctription = _d;
+}
+
+void Rooms::showDesc()
+{
+    cout << "Bienvenido! a ";
 }
 
 #endif
