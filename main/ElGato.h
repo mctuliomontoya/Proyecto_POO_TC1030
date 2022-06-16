@@ -4,7 +4,7 @@ class ElGato : public Rooms{
     private:
         string name;
     public:
-        void showDesc();
+        //void showDesc();
         int mainZ();
         void Intro_Primera(char c[3][3]);
         void tablero(char c[3][3]);
@@ -12,11 +12,6 @@ class ElGato : public Rooms{
         void Intro_IA(char c[3][3]);
         int Winner(char c[3][3]);
 };
-
-
-
-
-
 
 
 void ElGato::Intro_Primera(char c[3][3]){
@@ -287,8 +282,5 @@ int ElGato::mainZ(){
         printf("Has empatado, Vuelvelo a intentar\n");
         return 0;
     }
-
-
-    system("Pause");
 
 }

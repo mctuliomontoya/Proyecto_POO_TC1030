@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <time.h>
 
+void loop(char c[3][3]);
 void Intro_Primera(char c[3][3]);
 void tablero(char c[3][3]);
 void Intro_Personaje(char c[3][3]);
@@ -11,6 +12,13 @@ int Winner(char c[3][3]);
 int main(){
     char c[3][3];
 
+    loop(c);
+
+    system("Pause");
+
+}
+
+void loop(char c[3][3]){
     int i, j;
 
     i = 0;
@@ -37,24 +45,15 @@ int main(){
     
     if(j == 0){
         printf("Ganaste!!!\n");
-        return 1;
-        
     }
     else if(j == 1){
         printf("Perdiste :C\n");
-        return 0;
     }
     else{
         printf("Has empatado, Vuelvelo a intentar\n");
-        return 0;
     }
 
-
-    system("Pause");
-
 }
-
-
 
 void Intro_Primera(char c[3][3]){
     int i, j;
@@ -80,91 +79,93 @@ void Intro_Personaje(char c[3][3]){
         }
         while(aux < '1' || aux > '9');
 
-        switch(aux){
-            case '1':{
-                i = 0;
-                j = 0;
-                if(c[i][j] == 'X' || c[i][j] == 'O'){
-                    k = 1;
-                    printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+        do{
+            switch(aux){
+                case '1':{
+                    i = 0;
+                    j = 0;
+                    if(c[i][j] == 'X' || c[i][j] == 'O'){
+                        k = 1;
+                        printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                    }
+                    break;
                 }
-                break;
-            }
-            case '2':{
-                i = 0;
-                j = 1;
-                if(c[i][j] == 'X' || c[i][j] == 'O'){
-                    k = 1;
-                    printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                case '2':{
+                    i = 0;
+                    j = 1;
+                    if(c[i][j] == 'X' || c[i][j] == 'O'){
+                        k = 1;
+                        printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                    }
+                    break;
                 }
-                break;
-            }
-            case '3':{
-                i = 0;
-                j = 2;
-                if(c[i][j] == 'X' || c[i][j] == 'O'){
-                    k = 1;
-                    printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                case '3':{
+                    i = 0;
+                    j = 2;
+                    if(c[i][j] == 'X' || c[i][j] == 'O'){
+                        k = 1;
+                        printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                    }
+                    break;
                 }
-                break;
-            }
-            case '4':{
-                i = 1;
-                j = 0;
-                if(c[i][j] == 'X' || c[i][j] == 'O'){
-                    k = 1;
-                    printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                case '4':{
+                    i = 1;
+                    j = 0;
+                    if(c[i][j] == 'X' || c[i][j] == 'O'){
+                        k = 1;
+                        printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                    }
+                    break;
                 }
-                break;
-            }
-            case '5':{
-                i = 1;
-                j = 1;
-                if(c[i][j] == 'X' || c[i][j] == 'O'){
-                    k = 1;
-                    printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                case '5':{
+                    i = 1;
+                    j = 1;
+                    if(c[i][j] == 'X' || c[i][j] == 'O'){
+                        k = 1;
+                        printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                    }
+                    break;
                 }
-                break;
-            }
-            case '6':{
-                i = 1;
-                j = 2;
-                if(c[i][j] == 'X' || c[i][j] == 'O'){
-                    k = 1;
-                    printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                case '6':{
+                    i = 1;
+                    j = 2;
+                    if(c[i][j] == 'X' || c[i][j] == 'O'){
+                        k = 1;
+                        printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                    }
+                    break;
                 }
-                break;
-            }
-            case '7':{
-                i = 2;
-                j = 0;
-                if(c[i][j] == 'X' || c[i][j] == 'O'){
-                    k = 1;
-                    printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                case '7':{
+                    i = 2;
+                    j = 0;
+                    if(c[i][j] == 'X' || c[i][j] == 'O'){
+                        printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                    }
+                    break;
                 }
-                break;
-            }
-            case '8':{
-                i = 2;
-                j = 1;
-                if(c[i][j] == 'X' || c[i][j] == 'O'){
-                    k = 1;
-                    printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                case '8':{
+                    i = 2;
+                    j = 1;
+                    if(c[i][j] == 'X' || c[i][j] == 'O'){
+                        k = 1;
+                        printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                    }
+                    break;
                 }
-                break;
-            }
-            case '9':{
-                i = 2;
-                j = 2;
-                if(c[i][j] == 'X' || c[i][j] == 'O'){
-                    k = 1;
-                    printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                case '9':{
+                    i = 2;
+                    j = 2;
+                    if(c[i][j] == 'X' || c[i][j] == 'O'){
+                        k = 1;
+                        printf("La casilla esta ocupada! Por favor intenta con otro.\n\n");
+                    }
+                    break;
                 }
-                break;
             }
         }
+        while (k == 1);
     }
-    while (k == 1);
+    while(aux < '1' || aux > '9');
     
     c[i][j] = 'X';
     
