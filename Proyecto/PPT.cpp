@@ -24,8 +24,11 @@ int main (void){
         cout << "\t3.- Tijera" << endl;
         cout << "\t: ";
 
+        cin.clear();
+
         do {
             cin >> Heroe;
+            cin.get();
             if (Heroe<1||Heroe>3)
             {
                 cout << "Valor incorrecto. Intenta de nuevo: ";
@@ -43,13 +46,13 @@ int main (void){
 
         if(Heroe==IA){
             cout << "Empate" << endl;
-            if(Heroe = 1){
+            if(Heroe == 1){
                 opcion = "1piedra_piedra.txt";
             }
-            else if (Heroe = 2){
+            else if (Heroe == 2){
                 opcion = "1papel_papel.txt";
             }
-            else{
+            else if (Heroe == 3){
                 opcion = "1tijeras_tijeras.txt";
             }
         }
@@ -113,9 +116,6 @@ int main (void){
             break;
         }
 
-        Heroe = 0;
-        IA = 0;
-        cin.clear();
     }
 
     if (ganadas == 3){
