@@ -4,7 +4,7 @@ class ElGato : public Rooms{
     private:
         string name;
     public:
-        //void showDesc();
+        void showDesc();
         int mainZ();
         void Intro_Primera(char c[3][3]);
         void tablero(char c[3][3]);
