@@ -51,6 +51,7 @@ const char maze[17][17]={{'#','#','#','#','#','#','n','#','#','#','#','#','#','#
 void Clear(){
     system("CLS");//clear console
 }
+
 void InputHandle(int move, int &pX, int &pY){
     switch(move=getch()){
             case KEY_UP:
@@ -119,11 +120,9 @@ return false;
 }
 
 
-int main(){
 
 
-
-//movement
+void mnerv(){
 Ahorcado hangedMan;
 A2048 _A2048;
 ElGato gatoGame;
@@ -131,6 +130,7 @@ system("cls");
 int playerPosX=8;
 int playerPosY=8;
 int movement;
+
 
 while(!CheckWinCondition(playerPosX,playerPosY)){//if player is not in the finish, loop 
     Display(playerPosX, playerPosY);//Show current maze
@@ -145,7 +145,7 @@ if (playerPosX == 8 && playerPosY == 16){
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
-        main();
+        mnerv();
     }
 }
 else if (playerPosX == 6 && playerPosY == 0)
@@ -153,11 +153,11 @@ else if (playerPosX == 6 && playerPosY == 0)
     if (keys[1] == 0){
         if (hangedMan.mainHd() == 1){
             keys[1] = true;
-            main();
+            mnerv();
         }
         else{
             keys[1] = false;
-            main();
+            mnerv();
         }
     }
     else if(keys[1] == 1)
@@ -166,7 +166,7 @@ else if (playerPosX == 6 && playerPosY == 0)
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
-        main();
+        mnerv();
     }
 }
 else if (playerPosX == 14 && playerPosY == 0)
@@ -175,11 +175,11 @@ else if (playerPosX == 14 && playerPosY == 0)
         if (_A2048.mainA() == 1){
             keys[2] = true;
             system("pause");
-            main();
+            mnerv();
         }
         else{
             keys[2] = false;
-            main();
+            mnerv();
         }
     }
     else if(keys[2] == 1)
@@ -188,7 +188,7 @@ else if (playerPosX == 14 && playerPosY == 0)
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
-        main();
+        mnerv();
     }
 }
 else if (playerPosX == 0 && playerPosY == 15)
@@ -198,13 +198,13 @@ if (keys[3] == 0){
         keys[3] = true;
         cout<<"Me has ganado!, a la siguiente no sera tan facil >:c"<<endl;
         getch();
-        main();
+        mnerv();
     }
     else{
         keys[3] = false;
         cout<<"Has perdido!, necesitas volver a intentarlo!"<<endl;
         getch();
-        main();
+        mnerv();
     }
     }
     else if(keys[3] == 1)
@@ -213,10 +213,48 @@ if (keys[3] == 0){
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
-        main();
+        mnerv();
     }
 }
  
 
 
+}
+int main(){
+
+system("cls");
+/*
+    Dialogo principal
+*/
+
+cout << "Te despiertas, lo primero ves es un cielo azulado";
+getch();
+system("cls");
+cout << "Te llega a la mente un pensamiento, como llegue aqui?";
+getch();
+system("cls");
+cout << "Te levantas y ves unas paredes enormes con varios caminos,";
+getch();
+cout << "\n ~ Oh, que es esto? un laberinto?" <<endl;
+getch();
+cout << " ~ Lo ultimo que recuerdo es estar cayendo desde un edificio..."<<endl;
+getch();
+system("cls");
+cout << "De pronto se esucha estatica de fondo," << endl;
+getch();
+cout << "No, no era simple estatica.";
+getch();
+system("cls");
+cout << "desde un altavoz lejano se esucha:";
+getch();
+cout << "\n  ~ Bienvenido, heroe, pasaron muchos años desde que un extranjero piso las tierras de DOur";
+getch();
+cout << "\n ...";
+getch();
+cout << "\n Se que es extranio, pero necesitas salvarnos, solo asi podras regresar a tu hogar";
+getch();
+system("cls");
+
+
+mnerv();
 }
