@@ -7,11 +7,15 @@
 #include <ctime>
 #include <io.h>
 #include <fcntl.h>
+#include <cstdlib>
+#include <fstream>
+#include <sstream> 
 
 using namespace std;
 #include "dialogue.h"
 #include "ElGato.h"
 #include "Ahorcado.h"
+#include "PPT.h"
 #include "A2048.h"
 #include "Character.h"
 
@@ -128,6 +132,7 @@ void mnerv(){
 Ahorcado hangedMan;
 A2048 _A2048;
 ElGato gatoGame;
+PPT _PPT;
 system("cls");
 int playerPosX=8;
 int playerPosY=8;
@@ -151,6 +156,34 @@ if (playerPosX == 8 && playerPosY == 16){
         system("cls");
         mnerv();
     }
+    else if (keys[1]  == 1 && keys[2] == 1 && keys[3] == 1)
+    {
+        if (_PPT.mainS() == 1){
+            keys[0] = true;
+            cout << "El altavoz suena de fondo:";
+            getch();
+            cout << "\n   * Asi que lo hiciste, heroe, venciste a los 4 reyes*";
+            getch();
+            cout << "\n   *Crei que este dia jamas llegaria, SOMOS LIBRES!";
+            getch();
+            cout << "\n\n Se escuchan gritos de alegria por todo el laberinto, gente agradecida por tus logros";
+            getch();
+            system("cls");
+            system("Color 0A");
+            cout << "\n-----------------------------------------------";
+            cout <<"\n[      FELICIDADES, HAS COMPLETADO EL JUEGO!   ]";
+            cout << "\n-----------------------------------------------";
+            
+
+        }
+        else{
+            keys[0] = false;
+            cout << "Has perdido, pero no te rindas, aun tienes otra oportunidad.";
+            getch();
+            mnerv();
+        }
+    }
+    
 }
 else if (playerPosX == 6 && playerPosY == 0)
 {
