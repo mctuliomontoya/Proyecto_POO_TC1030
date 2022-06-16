@@ -160,6 +160,7 @@ if (playerPosX == 8 && playerPosY == 16){
     {
         if (_PPT.mainS() == 1){
             keys[0] = true;
+            getch();
             system("cls");
             cout << "El altavoz suena de fondo:";
             getch();
@@ -359,6 +360,7 @@ else if (opc == "N" || opc == "n")
     wcout << L"\n Ángel Marín - A00835132";
     wcout << L"\n Marco Montoya - A01254155";
     getch();
+    setmode(_fileno(stdout), _O_TEXT);
     system ("cls");
     system("Color 0A");
     cout << "\n-----------------------------------------------";
