@@ -9,7 +9,7 @@
 #include <fcntl.h>
 
 using namespace std;
-
+#include "dialogue.h"
 #include "ElGato.h"
 #include "Ahorcado.h"
 #include "A2048.h"
@@ -141,9 +141,11 @@ while(!CheckWinCondition(playerPosX,playerPosY)){//if player is not in the finis
 }
 
 if (playerPosX == 8 && playerPosY == 16){
-    if (keys[1]  == 0|| keys[2] == 0)
+    if (keys[1]  == 0|| keys[2] == 0 || keys[3] == 0)
     {
-        cout << "Necesitas terminar todos los niveles antes de entrar!" << endl<<endl;
+        cout << "Hay una puerta gigante en frente de ti, parece muy rigida" << endl;
+        getch();
+        cout << "Sera mejor dar media vuelta e irte" << endl;
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
@@ -168,7 +170,6 @@ else if (playerPosX == 6 && playerPosY == 0)
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
-        mnerv();
     }
 }
 else if (playerPosX == 14 && playerPosY == 0)
@@ -177,6 +178,7 @@ else if (playerPosX == 14 && playerPosY == 0)
         if (_A2048.mainB() == 1){
             keys[2] = true;
             system("pause");
+            dialogue();
             mnerv();
         }
         else{

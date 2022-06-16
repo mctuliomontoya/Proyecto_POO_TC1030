@@ -373,26 +373,6 @@ int A2048::mainB()
     }
 }
 
-int jajaj(){
-			system("cls");
-            cout << "No puede ser!";
-            getch();
-            system("cls");
-            cout << "  ~ Tenia todos los numeros a mi favor!! como perdi?";
-            getch();
-            cout << "\n  ~ Tantos estudios, tanto tiempo gastado, para que al final mi oponente sea un cerebrito";
-            getch();
-			cout << "\n  ~ Segun mis calculos este es mi fin, lo siento Gran Rey...";
-            getch();
-            system("cls");
-            cout << "Agarras una llave dorada, un poco daniada que estaba tirada y entras por un portal";
-            getch();
-            cout << "\n  ~ Parece que va al incio del laberinto";
-            getch();
-            cout << "\n ...";
-            getch();
-			return 1;
-}
 
 
 int A2048::mainA()
@@ -419,7 +399,24 @@ int A2048::mainA()
 		}
 		else if(gameState == GAME_WIN)
 		{
-			jajaj();
+			// system("cls");
+            // cout << "No puede ser!";
+            // getch();
+            // system("cls");
+            // cout << "  ~ Tenia todos los numeros a mi favor!! como perdi?";
+            // getch();
+            // cout << "\n  ~ Tantos estudios, tanto tiempo gastado, para que al final mi oponente sea un cerebrito";
+            // getch();
+			// cout << "\n  ~ Segun mis calculos este es mi fin, lo siento Gran Rey...";
+            // getch();
+            // system("cls");
+            // cout << "Agarras una llave dorada, un poco daniada que estaba tirada y entras por un portal";
+            // getch();
+            // cout << "\n  ~ Parece que va al incio del laberinto";
+            // getch();
+            // cout << "\n ...";
+            getch();
+			return 1;
 			break;
 		}
 		else if(gameState == GAME_OVER)
