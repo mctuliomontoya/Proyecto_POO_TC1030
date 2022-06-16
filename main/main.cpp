@@ -5,6 +5,8 @@
 #include <string>
 #include <Windows.h>
 #include <ctime>
+#include <io.h>
+#include <fcntl.h>
 
 using namespace std;
 
@@ -51,6 +53,7 @@ const char maze[17][17]={{'#','#','#','#','#','#','n','#','#','#','#','#','#','#
 void Clear(){
     system("CLS");//clear console
 }
+
 void InputHandle(int move, int &pX, int &pY){
     switch(move=getch()){
             case KEY_UP:
@@ -119,11 +122,9 @@ return false;
 }
 
 
-int main(){
 
 
-
-//movement
+void mnerv(){
 Ahorcado hangedMan;
 A2048 _A2048;
 ElGato gatoGame;
@@ -131,6 +132,7 @@ system("cls");
 int playerPosX=8;
 int playerPosY=8;
 int movement;
+
 
 while(!CheckWinCondition(playerPosX,playerPosY)){//if player is not in the finish, loop 
     Display(playerPosX, playerPosY);//Show current maze
@@ -145,7 +147,7 @@ if (playerPosX == 8 && playerPosY == 16){
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
-        main();
+        mnerv();
     }
 }
 else if (playerPosX == 6 && playerPosY == 0)
@@ -153,11 +155,11 @@ else if (playerPosX == 6 && playerPosY == 0)
     if (keys[1] == 0){
         if (hangedMan.mainHd() == 1){
             keys[1] = true;
-            main();
+            mnerv();
         }
         else{
             keys[1] = false;
-            main();
+            mnerv();
         }
     }
     else if(keys[1] == 1)
@@ -166,7 +168,7 @@ else if (playerPosX == 6 && playerPosY == 0)
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
-        main();
+        mnerv();
     }
 }
 else if (playerPosX == 14 && playerPosY == 0)
@@ -175,11 +177,11 @@ else if (playerPosX == 14 && playerPosY == 0)
         if (_A2048.mainA() == 1){
             keys[2] = true;
             system("pause");
-            main();
+            mnerv();
         }
         else{
             keys[2] = false;
-            main();
+            mnerv();
         }
     }
     else if(keys[2] == 1)
@@ -188,7 +190,7 @@ else if (playerPosX == 14 && playerPosY == 0)
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
-        main();
+        mnerv();
     }
 }
 else if (playerPosX == 0 && playerPosY == 15)
@@ -196,11 +198,15 @@ else if (playerPosX == 0 && playerPosY == 15)
 if (keys[3] == 0){
     if (gatoGame.mainZ() == 1){
         keys[3] = true;
-        main();
+        cout<<"Me has ganado!, a la siguiente no sera tan facil >:c"<<endl;
+        getch();
+        mnerv();
     }
     else{
         keys[3] = false;
-        main();
+        cout<<"Has perdido!, necesitas volver a intentarlo!"<<endl;
+        getch();
+        mnerv();
     }
     }
     else if(keys[3] == 1)
@@ -209,10 +215,97 @@ if (keys[3] == 0){
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
-        main();
+        mnerv();
     }
 }
  
+
+
+}
+int main(){
+
+setmode(_fileno(stdout), _O_U16TEXT);
+
+system("cls");
+/*
+    Dialogo principal
+*/
+
+wcout << L"Te despiertas, lo primero ves es un cielo azulado";
+getch();
+system("cls");
+wcout << L"Te llega a la mente un pensamiento ¿cómo llegue aqui?";
+getch();
+system("cls");
+wcout << L"Te levantas y ves unas paredes enormes con varios caminos,";
+getch();
+wcout << L"\n ~ Oh, ¿qué es esto? un laberinto?" <<endl;
+getch();
+wcout << L" ~ Lo último que recuerdo es estar cayendo desde un edificio..."<<endl;
+getch();
+system("cls");
+wcout << L"De pronto se esucha estática de fondo," << endl;
+getch();
+wcout << L"No, no era simple estática.";
+getch();
+system("cls");
+wcout << L"desde un altavoz lejano se esucha:";
+getch();
+wcout << L"\n  ~ Bienvenido, héroe, pasaron muchos a\u00F1os desde que un extranjero piso las tierras de DOur";
+getch();
+wcout << L"\n  ~En estas tierras hace años que se dejó de pelear con armas convencionales, desde que el gran rey se encerró en su mazmorra";
+getch(); 
+wcout << L"\n ...";
+getch();
+wcout << L"\n  ~Se que es extra\u00F1o, pero necesitas salvarnos, solo asi podras regresar a tu hogar";
+getch();
+system("cls");
+wcout << L"...";
+getch();
+system("cls");
+wcout << L" ~ Te explico, hay 4 reyes malignos que desean llevarnos a la ruina, para que puedas ser libre necesitas derrotarlos a todos";
+getch();
+wcout << L"\n  ~ Hay uno en la cueva al norte de aquí, dicen que es muy hábil con las palabras, pero tambien le gusta torturar a sus víctimas";
+getch();
+wcout << L"\n  ~ Cerca de el, al noreste, se encuentra el segundo de ellos, un hábil matemático que después de encerrarse en su laboratorio, se volvió loco";
+getch();
+wcout << L"\n  ~ El tercero, al suroeste de aqui, es un antiguo caballero, muy fuerte pero tambien un poco tonto, por lo que será pan comido";
+getch();
+wcout << L"\n  ~ Por último, el mas fuerte de ellos, el gran rey, desconozco su estilo de batalla ya que hace años que se encerró, pero de seguro es muy duro";
+getch();
+system("cls");
+wcout << L" ~ Por favor, ayudanos";
+getch();
+system("cls");
+wcout << L"¿Aceptar misión?   -   [Y/n] ";
+_setmode(_fileno(stdout),_O_TEXT);
+
+string opc;
+cin >> opc;
+
+if (opc == "Y" || opc == "y")
+{
+    setmode(_fileno(stdout), _O_U16TEXT);
+    wcout << L" \n  ~ Muchas gracias, héroe, que la bendición de los 4 grandes te acompañe";
+    getch();
+    system("cls");
+    wcout << L" !La gran aventura comienza! ";
+    getch();
+    _setmode(_fileno(stdout),_O_TEXT);
+    mnerv();
+}
+else if (opc == "N" || opc == "n")
+{
+    setmode(_fileno(stdout), _O_U16TEXT);
+    wcout << L"\n !Muchas Gracias por su atención!";
+    getch();
+    wcout << L"\n Código hecho por: ";
+    wcout << L"\n Ángel Marín - A00835132";
+    wcout << L"\n Marco Montoya - A01254155";
+    getch();
+    
+
+}
 
 
 }
