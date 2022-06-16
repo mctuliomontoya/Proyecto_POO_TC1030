@@ -27,6 +27,11 @@ int PPT::mainS(){
         cout << "\n ~ Empezemos";
         getch();
         system ("cls");
+        system("Color 04");
+        cout << "\n EMPIEZA LA BATALLA";
+        getch();
+        system("Color 07");
+        system("cls");
         mainP();
 
 }

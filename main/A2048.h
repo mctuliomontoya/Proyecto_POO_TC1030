@@ -353,9 +353,10 @@ int A2048::mainB()
             cout << "\n    ~ Esta bien, esto sera muy rapido.";
             getch();
             system("cls");
-
+			system("Color 04");
             cout << "PREPARATE PARA UNA BATALLA!!!!";
             getch();
+			system("Color 07");
             system("cls");
             cout << "                                  ~~[ 2048 ]]~~";
             cout << "\nUn juego de digitos, tienes que juntar los numeros iguales para que estos se hagan su doble";

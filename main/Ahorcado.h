@@ -45,9 +45,11 @@ int Ahorcado::mainHd(){
             cout << "\n    ~ Esperemos que mi victoria deleite al Gran Rey.";
             getch();
             system("cls");
+            system("Color 04");
             cout << "PREPARATE PARA UNA BATALLA INTENSA!!!!";
             getch();
             system("cls");
+            system("Color 07");
             cout << "                                  ~~[ El ahorcado ]]~~";
             cout << "\nEn este juego, tienes 6 oportunidades para adivinar una palabra, antes de ser ahorcado";
             cout << " \nPresiona una tecla para poner una letra, y ve si tu palabra la contiene";

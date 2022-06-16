@@ -160,6 +160,7 @@ if (playerPosX == 8 && playerPosY == 16){
     {
         if (_PPT.mainS() == 1){
             keys[0] = true;
+            system("cls");
             cout << "El altavoz suena de fondo:";
             getch();
             cout << "\n   * Asi que lo hiciste, heroe, venciste a los 4 reyes*";
