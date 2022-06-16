@@ -15,7 +15,7 @@ int main (void){
 
 
     srand ((unsigned) time (NULL));
-    cout << "Selecciona el valor de jugada del usuario." << endl;
+    cout << "Aventurero, elige sabiamente." << endl;
     cout << "\t1.- Piedra" << endl;
     cout << "\t2.- Papel" << endl;
     cout << "\t3.- Tijera" << endl;
@@ -33,11 +33,11 @@ int main (void){
     IA=1+rand()%3;
 
     if(IA==1)
-        cout << "La jugada del ordenador es Piedra" << endl;
+        cout << "El Gran Rey utilizo Piedra" << endl;
     if(IA==2)
-        cout << "La jugada del ordenador es Papel" << endl;
+        cout << "El Gran Rey utilizo Papel" << endl;
     if(IA==3)
-        cout << "La jugada del ordenador es Tijera" << endl;
+        cout << "El Gran Rey utilizo Tijera" << endl;
 
     if(Heroe==IA){
         cout << "Empate" << endl;
@@ -53,7 +53,7 @@ int main (void){
     }
 
     if((Heroe==1&&IA==3)||(Heroe==2&&IA==1)||(Heroe==3&&IA==2)){
-        cout << "Gana usuario" << endl;
+        cout << "Gana el Heroe" << endl;
         if (Heroe==1&&IA==3){
             opcion = "1piedra_tijeras.txt";
         }
@@ -66,7 +66,7 @@ int main (void){
     }
 
     if((Heroe==3&&IA==1)||(Heroe==1&&IA==2)||(Heroe==2&&IA==3)){
-            cout << "Gana ordenador" << endl;
+            cout << "Gana El Gran Rey" << endl;
             if (Heroe==3&&IA==1){
             opcion = "1tijeras_piedra.txt";
             }
