@@ -6,6 +6,7 @@ class ElGato : public Rooms{
     public:
         void showDesc();
         int mainZ();
+        int mainY();
         void Intro_Primera(char c[3][3]);
         void tablero(char c[3][3]);
         void Intro_Personaje(char c[3][3]);
@@ -18,7 +19,55 @@ void ElGato::showDesc(){
     std::cout << "el juego de El Gato!"<<endl;
 }
 
+int ElGato::mainY()
+{
+    int eleccion;
+    while(true){
+        cout << "Wow, en frente de ti hay un gran castillo, solo que esta muy destrozado"<< endl;
+        system ("pause");
+        system("cls");
+        cout << "\tQuieres entrar?" << endl;
+        cout << "[1] Entrar al Castillo" << endl;
+        cout << "[2] Salir" << endl;
+        cout <<  "Que quieres hacer: ";
+        cin >> eleccion;
+        if(eleccion == 1){
+            system("cls");
+            cout << "...";
+            getch();
+            system("cls");
+            cout << "  ~ Jajajaj, estuve esperando todo este tiempo para esto";
+            getch();
+            cout << "\n    ~ Eres un heroe, verda?";
+            getch();
+            cout << "\n    ~ Jajajaja, lo sabia, desde lejos senti tu presencia";
+            getch(); 
+            cout << "\n    ~ Creo que ya sabes que te dire, chico";
+            getch();
+            cout << "\n    ~ Esperemos que sea una batalla genial y muy intensa";
+            getch();
+			cout << "\n    ~ PREPARATE PARA PERDER!!";
+            getch(); 
+            system("cls");
 
+            cout << "LISTO PARA UNA BATALLA!!!!";
+            getch();
+            system("cls");
+            cout << "                            ~~[ Juego del gato ]]~~";
+            cout << "\nUn juego clasico, gana aquel que logre hacer una linea con 3 de sus fichas";
+            cout << " \nEn este caso, te representan las fichas X, y al oponente las O";
+            getch();
+            system("cls");
+
+            mainZ();
+            break;
+        }
+        else if(eleccion == 2){
+            return 0;
+            break;
+        }
+    }
+}
 
 int ElGato::mainZ(){
     char c[3][3];

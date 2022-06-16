@@ -198,7 +198,7 @@ else if (playerPosX == 14 && playerPosY == 0)
 else if (playerPosX == 0 && playerPosY == 15)
 {
 if (keys[3] == 0){
-    if (gatoGame.mainZ() == 1){
+    if (gatoGame.mainY() == 1){
         keys[3] = true;
         cout<<"Me has ganado!, a la siguiente no sera tan facil >:c"<<endl;
         getch();
