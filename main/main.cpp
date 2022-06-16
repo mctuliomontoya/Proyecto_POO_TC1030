@@ -200,8 +200,28 @@ else if (playerPosX == 0 && playerPosY == 15)
 if (keys[3] == 0){
     if (gatoGame.mainY() == 1){
         keys[3] = true;
-        cout<<"Me has ganado!, a la siguiente no sera tan facil >:c"<<endl;
         getch();
+        system("cls");
+        cout<<"QUEE!???"<<endl;
+        getch();
+        cout<<"\n...";
+        getch();
+        system("cls");
+        cout<<"\n ~ No puede ser cierto, yo? perder?";
+        getch();
+        cout << "\n ~ Agh!!, supongo que el dia iba a llegar, pero no crei que tan pronto";
+        getch();
+        cout <<"\n ~ Esta bien! te la mereces...";
+        getch();
+        system("cls");
+        cout << "El gran y robusto caballero te entrega una llave de plata, con detalles rojos";
+        getch();
+        cout << "\n Agarras la llave que estiraba el Caballero y entras por un portal";
+        getch();
+        cout << "\n  ~ Parece que va al incio del laberinto";
+        getch();
+        cout << "\n ...";
+        getch(); 
         mnerv();
     }
     else{
@@ -213,7 +233,7 @@ if (keys[3] == 0){
     }
     else if(keys[3] == 1)
     {
-        cout << "Ya has completado este desafio, aun te esperan un par!"<<endl<<endl;
+        cout << "Donde estaba el gran castillo no quedan mas que ruinas..."<<endl<<endl;
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
