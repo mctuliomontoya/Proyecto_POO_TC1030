@@ -143,7 +143,7 @@ while(!CheckWinCondition(playerPosX,playerPosY)){//if player is not in the finis
 if (playerPosX == 8 && playerPosY == 16){
     if (keys[1]  == 0|| keys[2] == 0)
     {
-        cout << "Necesitas terminar todos los niveles antes de entrar! >:c" << endl<<endl;
+        cout << "Necesitas terminar todos los niveles antes de entrar!" << endl<<endl;
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
@@ -164,7 +164,7 @@ else if (playerPosX == 6 && playerPosY == 0)
     }
     else if(keys[1] == 1)
     {
-        cout << "Ya has completado este desafio, aun te esperan un par!"<<endl<<endl;
+        cout << "La cueva que antes estaba en esta area se ha derrumbado, parece que no hay paso."<<endl<<endl;
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
@@ -174,7 +174,7 @@ else if (playerPosX == 6 && playerPosY == 0)
 else if (playerPosX == 14 && playerPosY == 0)
 {
     if (keys[2] == 0){
-        if (_A2048.mainA() == 1){
+        if (_A2048.mainB() == 1){
             keys[2] = true;
             system("pause");
             mnerv();
@@ -186,7 +186,7 @@ else if (playerPosX == 14 && playerPosY == 0)
     }
     else if(keys[2] == 1)
     {
-        cout << "Ya has completado este desafio, aun te esperan un par!"<<endl<<endl;
+        cout << "El laboratorio esta totalmente destruido!"<<endl<<endl;
         cout << "Presiona cualquier tecla para continuar...";
         getch();
         system("cls");
@@ -263,7 +263,7 @@ system("cls");
 wcout << L"...";
 getch();
 system("cls");
-wcout << L" ~ Te explico, hay 4 reyes malignos que desean llevarnos a la ruina, para que puedas ser libre necesitas derrotarlos a todos";
+wcout << L"  ~ Te explico, hay 4 reyes malignos que desean llevarnos a la ruina, para que puedas ser libre necesitas derrotarlos a todos";
 getch();
 wcout << L"\n  ~ Hay uno en la cueva al norte de aquí, dicen que es muy hábil con las palabras, pero tambien le gusta torturar a sus víctimas";
 getch();

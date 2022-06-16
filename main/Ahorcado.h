@@ -1,5 +1,6 @@
 #include "Rooms.h"
 
+
 class Ahorcado : public Rooms{
     private:
         string desc;
@@ -20,7 +21,7 @@ int Ahorcado::mainHd(){
     fallos = "";
     int eleccion;
     while(true){
-        cout << "Encontramos una cueva muy misteriosa, se ve que algo al fondo brilla..."<< endl;
+        cout << "Encuentras una cueva muy misteriosa, se ve que algo brillante al fondo..."<< endl;
         system ("pause");
         system("cls");
         cout << "\tQuieres entrar?" << endl;
@@ -29,6 +30,30 @@ int Ahorcado::mainHd(){
         cout <<  "Que quieres hacer: ";
         cin >> eleccion;
         if(eleccion == 1){
+            system("cls");
+            cout << "...";
+            getch();
+            system("cls");
+            cout << "  ~ Oh, vaya, hace muchos anios que no me encontraba con alguien...";
+            getch();
+            cout << "\n    ~ y parece que estoy de suerte! no es nadie mas que el mismisimo heroe!!";
+            getch();
+            cout << "\n    ~ ya que estas aqui, te dare la oportunidad de tu vida, una gran batalla con el mas poderoso de todos los reyes bajos!";
+            getch(); 
+            cout << "\n    ~ YO SOY EL MISMISIMO REY CAIDO, INVENCIBLE E INVICTO";
+            getch();
+            cout << "\n    ~ Esperemos que mi victoria deleite al Gran Rey.";
+            getch();
+            system("cls");
+            cout << "PREPARATE PARA UNA BATALLA INTENSA!!!!";
+            getch();
+            system("cls");
+            cout << "                                  ~~[ El ahorcado ]]~~";
+            cout << "\nEn este juego, tienes 6 oportunidades para adivinar una palabra, antes de ser ahorcado";
+            cout << " \nPresiona una tecla para poner una letra, y ve si tu palabra la contiene";
+            getch();
+            system("cls");
+
             play();
             break;
         }
@@ -85,8 +110,22 @@ void Ahorcado::play(){
             cout << "--- AHORCADO ---" << endl;
             DibujarCuerpo();
             cout << "Palabra: " << palabras[nA] << endl;
-            cout << "Ganaste!!!" << endl;
-            system("pause");
+            system("cls");
+            cout << "QUE!";
+            getch();
+            system("cls");
+            cout << "  ~ HABIA PLANEADO ESTA ESTRATEGIA POR TANTO TIEMPO!! como perdi?";
+            getch();
+            cout << "\n  ~ Ya no me quedan fuerzas, supongo que es mi final";
+            getch();
+            system("cls");
+            cout << "Agarras una llave brillante que estaba tirada y entras por un portal";
+            getch();
+            cout << "\n  ~ Parece que va al incio del laberinto";
+            getch();
+            cout << "\n ...";
+            getch();
+
             return;
 
         }

@@ -1,6 +1,6 @@
 
 #include "Rooms.h"
-
+#include "conio.h"
 
 
 
@@ -27,6 +27,7 @@ class A2048: public Rooms{
         int Input();
         int Judge();
         int mainA();
+		int mainB();
 
 };
 
@@ -279,7 +280,7 @@ int A2048::Judge()
 	{
 		for (int j = 0; j < COL; ++j)
 		{
-			if (game[i][j] == 16)
+			if (game[i][j] == 32)
 			{
 				return GAME_WIN;
 				break;
@@ -317,6 +318,83 @@ int A2048::Judge()
 
 }
 
+
+int A2048::mainB()
+{
+	    int eleccion;
+    while(true){
+        cout << "Que es esto?, una puerta metalica que parece de laboratorio..."<< endl;
+        system ("pause");
+        system("cls");
+        cout << "\tQuieres entrar?" << endl;
+        cout << "[1] Entrar al laboratorio" << endl;
+        cout << "[2] Salir" << endl;
+        cout <<  "Que quieres hacer: ";
+        cin >> eleccion;
+        if(eleccion == 1){
+            system("cls");
+            cout << "...";
+            getch();
+            system("cls");
+            cout << "  ~ 2046, 2047 y por ultimo, 2048...";
+            getch();
+            cout << "\n    ~ Eh? quien eres tu?";
+            getch();
+            cout << "\n    ~ Espera, no, no, no puede ser verdad?";
+            getch(); 
+            cout << "\n    ~ Uno de los grandes heroes????";
+            getch();
+            cout << "\n    ~ Jaj!, que ironico, tantas tesis que hice sobre la nula existencia de heroes como tu";
+            getch();
+			cout << "\n    ~ Y al final resulta que si son de verdad!!";
+            getch(); 
+            cout << "\n    ~ Supongo que ahora te tengo que vencer, si no el Gran Rey se enojara";
+            getch();
+            cout << "\n    ~ Esta bien, esto sera muy rapido.";
+            getch();
+            system("cls");
+
+            cout << "PREPARATE PARA UNA BATALLA!!!!";
+            getch();
+            system("cls");
+            cout << "                                  ~~[ 2048 ]]~~";
+            cout << "\nUn juego de digitos, tienes que juntar los numeros iguales para que estos se hagan su doble";
+            cout << " \nAl llegar a 32, el juego sera tomado como terminado, utiliza las flechas para mover las casillas.";
+            getch();
+            system("cls");
+
+            mainA();
+            break;
+        }
+        else if(eleccion == 2){
+            return 0;
+            break;
+        }
+    }
+}
+
+int jajaj(){
+			system("cls");
+            cout << "No puede ser!";
+            getch();
+            system("cls");
+            cout << "  ~ Tenia todos los numeros a mi favor!! como perdi?";
+            getch();
+            cout << "\n  ~ Tantos estudios, tanto tiempo gastado, para que al final mi oponente sea un cerebrito";
+            getch();
+			cout << "\n  ~ Segun mis calculos este es mi fin, lo siento Gran Rey...";
+            getch();
+            system("cls");
+            cout << "Agarras una llave dorada, un poco daniada que estaba tirada y entras por un portal";
+            getch();
+            cout << "\n  ~ Parece que va al incio del laberinto";
+            getch();
+            cout << "\n ...";
+            getch();
+			return 1;
+}
+
+
 int A2048::mainA()
 {
 	// Establecer una semilla de número aleatorio
@@ -341,9 +419,7 @@ int A2048::mainA()
 		}
 		else if(gameState == GAME_WIN)
 		{
-
-			
-			return 1;
+			jajaj();
 			break;
 		}
 		else if(gameState == GAME_OVER)
