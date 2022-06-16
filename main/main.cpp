@@ -359,6 +359,11 @@ else if (opc == "N" || opc == "n")
     wcout << L"\n Ángel Marín - A00835132";
     wcout << L"\n Marco Montoya - A01254155";
     getch();
+    system ("cls");
+    system("Color 0A");
+    cout << "\n-----------------------------------------------";
+    cout <<"\n[      FELICIDADES, HAS COMPLETADO EL JUEGO!   ]";
+    cout << "\n-----------------------------------------------";
     
 
 }

@@ -53,7 +53,7 @@ int ElGato::mainY()
             cout << "LISTO PARA UNA BATALLA!!!!";
 
             getch();
-            system("Color 01");
+            system("Color 07");
             system("cls");
             cout << "                            ~~[ Juego del gato ]]~~";
             cout << "\nUn juego clasico, gana aquel que logre hacer una linea con 3 de sus fichas";
