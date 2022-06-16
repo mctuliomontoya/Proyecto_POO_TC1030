@@ -5,6 +5,8 @@
 #include <string>
 #include <Windows.h>
 #include <ctime>
+#include <io.h>
+#include <fcntl.h>
 
 using namespace std;
 
@@ -222,39 +224,88 @@ if (keys[3] == 0){
 }
 int main(){
 
+setmode(_fileno(stdout), _O_U16TEXT);
+
 system("cls");
 /*
     Dialogo principal
 */
 
-cout << "Te despiertas, lo primero ves es un cielo azulado";
+wcout << L"Te despiertas, lo primero ves es un cielo azulado";
 getch();
 system("cls");
-cout << "Te llega a la mente un pensamiento, como llegue aqui?";
+wcout << L"Te llega a la mente un pensamiento ¿cómo llegue aqui?";
 getch();
 system("cls");
-cout << "Te levantas y ves unas paredes enormes con varios caminos,";
+wcout << L"Te levantas y ves unas paredes enormes con varios caminos,";
 getch();
-cout << "\n ~ Oh, que es esto? un laberinto?" <<endl;
+wcout << L"\n ~ Oh, ¿qué es esto? un laberinto?" <<endl;
 getch();
-cout << " ~ Lo ultimo que recuerdo es estar cayendo desde un edificio..."<<endl;
-getch();
-system("cls");
-cout << "De pronto se esucha estatica de fondo," << endl;
-getch();
-cout << "No, no era simple estatica.";
+wcout << L" ~ Lo último que recuerdo es estar cayendo desde un edificio..."<<endl;
 getch();
 system("cls");
-cout << "desde un altavoz lejano se esucha:";
+wcout << L"De pronto se esucha estática de fondo," << endl;
 getch();
-cout << "\n  ~ Bienvenido, heroe, pasaron muchos años desde que un extranjero piso las tierras de DOur";
-getch();
-cout << "\n ...";
-getch();
-cout << "\n Se que es extranio, pero necesitas salvarnos, solo asi podras regresar a tu hogar";
+wcout << L"No, no era simple estática.";
 getch();
 system("cls");
+wcout << L"desde un altavoz lejano se esucha:";
+getch();
+wcout << L"\n  ~ Bienvenido, héroe, pasaron muchos a\u00F1os desde que un extranjero piso las tierras de DOur";
+getch();
+wcout << L"\n  ~En estas tierras hace años que se dejó de pelear con armas convencionales, desde que el gran rey se encerró en su mazmorra";
+getch(); 
+wcout << L"\n ...";
+getch();
+wcout << L"\n  ~Se que es extra\u00F1o, pero necesitas salvarnos, solo asi podras regresar a tu hogar";
+getch();
+system("cls");
+wcout << L"...";
+getch();
+system("cls");
+wcout << L" ~ Te explico, hay 4 reyes malignos que desean llevarnos a la ruina, para que puedas ser libre necesitas derrotarlos a todos";
+getch();
+wcout << L"\n  ~ Hay uno en la cueva al norte de aquí, dicen que es muy hábil con las palabras, pero tambien le gusta torturar a sus víctimas";
+getch();
+wcout << L"\n  ~ Cerca de el, al noreste, se encuentra el segundo de ellos, un hábil matemático que después de encerrarse en su laboratorio, se volvió loco";
+getch();
+wcout << L"\n  ~ El tercero, al suroeste de aqui, es un antiguo caballero, muy fuerte pero tambien un poco tonto, por lo que será pan comido";
+getch();
+wcout << L"\n  ~ Por último, el mas fuerte de ellos, el gran rey, desconozco su estilo de batalla ya que hace años que se encerró, pero de seguro es muy duro";
+getch();
+system("cls");
+wcout << L" ~ Por favor, ayudanos";
+getch();
+system("cls");
+wcout << L"¿Aceptar misión?   -   [Y/n] ";
+_setmode(_fileno(stdout),_O_TEXT);
+
+string opc;
+cin >> opc;
+
+if (opc == "Y" || opc == "y")
+{
+    setmode(_fileno(stdout), _O_U16TEXT);
+    wcout << L" \n  ~ Muchas gracias, héroe, que la bendición de los 4 grandes te acompañe";
+    getch();
+    system("cls");
+    wcout << L" !La gran aventura comienza! ";
+    getch();
+    _setmode(_fileno(stdout),_O_TEXT);
+    mnerv();
+}
+else if (opc == "N" || opc == "n")
+{
+    setmode(_fileno(stdout), _O_U16TEXT);
+    wcout << L"\n !Muchas Gracias por su atención!";
+    getch();
+    wcout << L"\n Código hecho por: ";
+    wcout << L"\n Ángel Marín - A00835132";
+    wcout << L"\n Marco Montoya - A01254155";
+    getch();
+    
+
+}
 
 
-mnerv();
 }
